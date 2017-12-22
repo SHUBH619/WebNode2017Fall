@@ -1,0 +1,4 @@
+This file is created so that we don't have to change code/basic configuration whe we deploy our server to somewhere else
+
+if the server has different username, databse, host etc. then we can simply change config.json file.
+No need to make changes in code.

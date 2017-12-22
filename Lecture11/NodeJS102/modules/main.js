@@ -1,5 +1,5 @@
 console.info('main run')
-const lib = require('./lib')
+const lib = require('./lib') //imports lib.js from the same directory
 const lib2= require('./lib2')
 console.info('lib imported')
 

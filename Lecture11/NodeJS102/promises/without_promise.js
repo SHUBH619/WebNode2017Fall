@@ -6,10 +6,10 @@ function downloadFile(url, downloaded) {
 
 downloadFile("http://cb.lk/file.txt")
 
-// Promis-ification of async function
+// Promisification of async function
 function downloadFilePromise (url) {
     return new Promise(function (resolve, reject) {
-        downloadFile(url, function (err, data) {
+        downloadFile(url, function (err, data) {   //callback function promisified
             if (err) {
                 reject(err)
             } else {

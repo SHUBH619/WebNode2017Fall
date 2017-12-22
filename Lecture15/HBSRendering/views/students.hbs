@@ -6,17 +6,17 @@
 </head>
 <body>
 
-<h1>{{heading}}</h1>
-
-<ul>
-    {{#each students as |student|}}
-        <li>
-            Name: <b>{{student.name}}</b>
-            <br>
-            Course: {{student.course}}
-        </li>
-    {{/each}}
-</ul>
-
+    <h1>{{heading}}</h1>
+    <ul>
+        {{#each students as |student|}}     <!--creating template of one student and using a loop creating it for multiple students.-->
+                                            <!--students in loop refers to the students array which is sent by object from students.js in routes folder-->
+                                             <!-- double braces represent the object sent from students.js-->
+            <li>
+                Name: <b>{{student.name}}</b>
+                <br>
+                Course: {{student.course}}
+            </li>
+        {{/each}}
+    </ul>
 </body>
 </html>

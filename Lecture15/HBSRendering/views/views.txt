@@ -1,0 +1,3 @@
+Views folder used to store hbs files.
+These hbs files cannot be seen directly. These files are combined with some data which happens on the fly.
+Thus, the html files aren't actually saved. HTML files are created on request.

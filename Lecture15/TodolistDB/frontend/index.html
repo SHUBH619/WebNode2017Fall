@@ -8,11 +8,9 @@
 <h1>TODO List</h1>
 
 <form action="/todos/add" method="post">
-    <input type="text" name="newtodo">
-    <input type="checkbox" name="subject" value="en"> English
-    <input type="checkbox" name="subject" value="hi"> Hindi
+    <input type="text" name="newtodo"> <!--will be available in req.body-->
+    <input type="checkbox" name="subject" value="en">English  <!--Both checkboxes have same name-->
+    <input type="checkbox" name="subject" value="hi">Hindi <!--if both checkboxes are selected their values will be available as an array in req.body as they've same name else as a single string in req.body-->
     <input type="submit">
-</form>
-
 </body>
 </html>

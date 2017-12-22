@@ -23,10 +23,10 @@ function saveFile(data) {
     })
 }
 
-async function getFile () {
-    try {
-        let dlData = await downloadFile("1")
-        console.info(dlData)
+async function getFile () {  //async tells that things inside the function are async
+    try {   //try catch to handle reject cases
+        let dlData = await downloadFile("1"); //await can be used only when the function is async else it blocks the thread
+        console.info(dlData);         //in case of reject exception is thrown and in resolve first argument of resolve is returned
 
         let encData = await encrypt(dlData)
         console.info(encData)
@@ -40,5 +40,5 @@ async function getFile () {
 
 }
 
-getFile()
-console.info('are we done yet ?')
+getFile();
+console.info('are we done yet ?');
