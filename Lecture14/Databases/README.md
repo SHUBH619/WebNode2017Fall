@@ -10,8 +10,8 @@ sudo service mysql stop
 ### Mac
 
 ```shell
-brew services mysql start
-brew services mysql stop
+brew services start mysql
+brew services stop mysql
 ```
 
 or
