@@ -1,40 +1,55 @@
-const MongoClient = require('mongodb').MongoClient;
+// to start mongodb server, in terminal, create mongodb folder and => mongod --dbpath=./mongodb
 
-const dbUri = 'mongodb://localhost:27017/exampledb'
+const MongoClient=require('mongodb').MongoClient;
 
-MongoClient.connect(dbUri, function (err, db) {
-    if (err) throw err;
+const url='mongodb://localhost:27017/exampledb';//connect to database
 
-    const todos = db.collection('todos')
+MongoClient.connect(url,function (err,db) {
+
+    if(err)
+        throw err;
+
+    const todos=db.collection('todos');  //get collection todos. Creates it if doesn't exist
+
+    // todos.insertOne(
+    //     {
+    //         task:'task 1',
+    //         done:true
+    //     },
+    //     function (err,results) {
+    //         if(err)
+    //             throw err;
+    //         console.log(results);  //check ops property in the last which tells about document inserted.
+    //         // _id property is created by mongodb which is unique for every document at same servers/different servers in same system as well as different systems
+    //         //it is recommended not to change _id explicitly as it helps in partitioning
+                //ops shows changes done by the query
+    //     }
+    // )
+
 
     todos.insertMany([
-        // {
-        //     task: 'other task',
-        //     done: false
-        // },
-        // {
-        //     task: 'one more task',
-        //     done: true
-        // }
         {
-            task: "important task",
-            priority: 1,
-            done: false
+            task:'important task',
+            priority:1,
+            done:false
         },
         {
-            task: "unnecessary task",
-            priority: 4,
-            done: false
+            task:'unnecessary task',
+            priority:4,
+            done:false
         },
         {
-            task: "necessary task",
-            priority: 2,
-            done: false
-        }
-    ], function (err, result) {
-        if (err) throw  err;
-
-        console.log(result)
+            task:'necessary task',
+            priority:1,
+            done:false
+        }],
+        (err,results)=>{
+        console.log(results);
         db.close();
-    })
+        }
+    )
+
 })
+
+
+
