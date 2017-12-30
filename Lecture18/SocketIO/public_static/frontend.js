@@ -1,4 +1,10 @@
-var socket = io();
+var socket = io();//this socket variable corresponds to the endpoint of pipeline at client side
+//if let used io object will not be available in browser's window object i.e. not available in outer function scope
+
+
+
+
+
 function play(instId) {
     socket.emit('play', {id: instId})
 }
